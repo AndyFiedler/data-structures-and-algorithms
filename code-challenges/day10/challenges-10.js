@@ -14,7 +14,14 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  
+  input.forEach(array => {
+    count += array.reduce((acc, number) => {
+      if(number === target) {
+        return acc + 1
+      }
+      
+    }, 0)
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,9 +33,9 @@ You may want to use filter, map, or reduce for this problem, but are not require
 
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
-
+//.filter returns something based on whether its true or false
 const totalSum = (input) => {
-  // Solution code here...
+   
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -44,7 +51,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +117,7 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -120,7 +127,9 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortestSoFar, nextCharacter) => {
+    Number(shortestSoFar.height) , Number(nextCharacter.height) ? shortestSoFar : nextCharacter
+  }, 0).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
