@@ -8,8 +8,18 @@ Write a function named oddValues that, given an array of integers as input, uses
 For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
+// var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter(word => word.length > 6);
+
+// console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+
+
 const oddValues = (arr) => {
-  arr.filter(odd);
+  const result = arr.filter(num % 2 !== 0);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -24,7 +34,8 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  arr.filter(vowels);
+  const result = arr.filter(string => string.matches(/[aeiou]+/i));
+    return result;
 };
 
 
@@ -37,8 +48,14 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  return arr.filter( => )
-  return !forbiddenValues.includes(arr);
+  //return !forbiddenValues.includes(arr);
+    return arr.filter((element) => {
+      return !forbiddenValues.includes(element);
+    });
+    /*
+    return arr.filter( function (element) {
+      return !forbiddenValues.includes(element);
+    });*/
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -79,9 +96,12 @@ const snorlaxData = {
   name: 'snorlax',
   weight: 4600,
 };
+// Write a function named getBaseStatGreaterThan that, given the snorlaxData, above, and an integer as input, uses filter to return an array containing all stats with a baseStat greater than the integer.
 
+// For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  
+  const result = arr.filter(stat => stat.baseStat > minBaseStat);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -93,7 +113,8 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  const result = arr.filter(stat => stat.baseStat > minBaseStat).map(stat.name);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,7 +167,8 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  const result = arr.filter(character => !character.children);
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
