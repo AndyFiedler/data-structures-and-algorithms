@@ -12,8 +12,15 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true };
 
+
+
+
+const {name, topics} = courseInfo;
+
+console.log(name, topics);
+
 const getCourseKeys = (obj) => {
-  
+  return Object.keys(obj);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,9 +76,9 @@ let characters = [
 ];
 
 const getHouses = (arr) => {
-  let houses = [];
-    characters.map(houses);
-  return houses;
+  return arr.map((character) => {
+    return character.house;
+  })
 };
 
 /*------------------------------------------------------------------------------------------------
@@ -87,7 +94,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  
+  for(let person of Object.values(arr)) {
+    if(person.name === character || person.spouse === character){
+      return person.children.length > 0;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +111,12 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
+  for(let person of Object.entries(arr)[0]) {
+    if(person.name === character || person.spouse === character){
+      return person.children.length > 0;
+    }
+  }
+  return false;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +126,21 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  // Solution code here...
+  let characters = [];
+  for(let person of arr){
+    if(!characters.includes(characters.name)){
+      characters.push(person.name);
+    }
+    if(!characters.includes(person.spouse)){
+    characters.push(person.spouse);
+    }
+    for(let child of person.children){
+      if(!characters.includes(child)){
+        characters.push(child);
+      }
+    }
+  }
+  return characters.length;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -124,7 +155,7 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-  // Solution code here...
+    
   return sizes;
 };
 
