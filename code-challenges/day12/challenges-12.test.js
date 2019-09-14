@@ -23,15 +23,11 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-let totalArray = [];
-for(i = 0; i < stores(i).length; i++){
-    for(j = 0; j < stores(i).length; i++){
-        totalArray[i] = [i][j];
-
-}
-    totalArray.push(totalArray);
-}
-    return totalArray;
+  return hoursOpen.map((val, index) => {
+    return stores.reduce((total, store) => {
+      return total + store[index];
+    }, 0);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,11 +41,9 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 ------------------------------------------------------------------------------------------------ */
 
 const salesData = (hours, data) => {
-  return hours.map((hours, i) => {
-      sales:`${data[i]}cookies}`,
-  time: hours;
-
-  })
+  return hours.map((hour, i) => {
+    return {sales: `${data[i]} cookies`, time: hour};
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -71,8 +65,7 @@ const errands = [
 ];
 
 const howManyTreats = (arr) => {
-  let treats = 0;
-    arr[2].items[1].quantity;
+   return arr[2].items[1].quantity;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -96,8 +89,9 @@ The top row of the board is considered row zero and row numbers increase as they
 const battleship = (board, row, col) => {
   if(board[row][col]=== '#'){
       return 'hit';
-  }
-  else return 'miss';
+  } else {
+    return 'miss'
+  };
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -109,7 +103,7 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  
+  numbers.reduce((product, arr) => product * arr.reduce((product, num) => product * num), 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,10 +123,15 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  let days = 0;
-  let totalTemperture = 0; 
-  for(i =0; i < weather.length; i++)
-
+  let total = 0;
+  let count = 0;
+  weather.forEach((week) => {
+    week.forEach((day) => {
+      total += day;
+      count++;
+    })
+  })
+  return total / count;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,7 +152,12 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  
+  let weeklyAverages = weather.map(weather => weather.reduce((totalTemp, currentTemp) => {
+    return totalTemp + currentTemp;
+  })/ week.length);
+  return weeklyAverages.reduce((lowest, current) => {
+    return current < lowest ? current : lowest;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -167,14 +171,11 @@ The function should parse the string as rows and columns and compute the sum of 
 
 For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
-
+/*['1,1,1', '4,4,4', '9,9,9'];
+**'1,1,1'
+**['1','1','1']*/
 const excel = (str) => {
-  const sums = [];
-  const row = str.split('\n');
-
-  rows.forEach((row => {
-      
-  }))
+  return str.split('\n').map(line => line.split(',').reduce((sum, curr) => sum + Number(curr), 0));
 };
 
 /* ------------------------------------------------------------------------------------------------
