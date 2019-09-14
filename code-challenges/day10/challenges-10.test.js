@@ -35,7 +35,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 //.filter returns something based on whether its true or false
 const totalSum = (input) => {
-   
+   const result = input.reduce((acc, array) => {
+     return acc + array.reduce((total, num) => {
+       return total + num;
+     } )
+   }, 0)
+   return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,7 +56,8 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  
+  const result = input.map(arr => arr.filter(element => typeof element === 'number' && element % 5 === 0).map(num => Math.pow(2, num)));
+    return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -115,9 +121,19 @@ let starWarsData = [{
   birth_year: '19BBY',
   gender: 'female'
 }];
+// Write a function named findMaleAndFemale that, given the Star Wars data, below,
+// returns the names of the characters whose gender is either male or female.
 
+// The names should be combined into a single string with each character name separated by "and".
+
+// For example, "Leia Organa and Luke Skywalker".
 let findMaleAndFemale = (data) => {
-  return 
+  let result = data.filter(character => {
+    return character.gender === 'male' || character.gender === 'female';
+  }).reduce((acc, character) => {
+    //if acc is truthy, do first thing, else if not do second thing
+    return acc ? `${acc} and ${character.name}` : character.name;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
