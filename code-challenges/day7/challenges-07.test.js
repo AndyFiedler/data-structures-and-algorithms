@@ -12,7 +12,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   for (let i =0; i < str.length +1; i++);
-    result.push(str.slice(i);
+    result.push(str.slice(i));
 
   return result;
 };
