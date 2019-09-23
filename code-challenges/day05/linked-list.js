@@ -1,52 +1,54 @@
 'use strict';
 
-let current = this.head;
-let previous;
-let count = 0;
+function doSomething() {
+  let current = this.head;
+  let previous;
+  let count = 0;
 
-let results = [];
+  let results = [];
 
-if(index ===0) {
+  if(index ===0) {
     this.head = current.next;
-} else {
+  } else {
     while(count < index) {
-        count++;
-        previous = current;
-        current = current.next;
+      count++;
+      previous = current;
+      current = current.next;
     }
+  }
+  return results;
 }
 
 class Node {
-    constructor(data, next = null) {
-        this.data = data;
-        this.next = next;
-    }
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
 }
 
 class LinkedList {
-    constructor() {
-        this.head = null;
-        this.size = 0;
-    }
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
 
-    //insert first node
-    firstNode(data) {
-        this.head = new Node(data, this.head);
-    }
+  //insert first node
+  firstNode(data) {
+    this.head = new Node(data, this.head);
+  }
 
-    //insert last node 
-    lastNode(data) {
-        this.tail = new Node(data, this.tail);
-    }
+  //insert last node 
+  lastNode(data) {
+    this.tail = new Node(data, this.tail);
+  }
     
-    //get at index(includes)
-    readAtIndex(data) {
+  //get at index(includes)
+  readAtIndex(data) {
         
-    }
+  }
 
 };
 
-return results;
 module.exports = LinkedList;
 
 
