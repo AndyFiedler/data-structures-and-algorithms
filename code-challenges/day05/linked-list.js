@@ -1,58 +1,62 @@
-'use strict';
-
-let current = this.head;
-let previous;
-let count = 0;
-
-let results = [];
-
-if(index ===0) {
-    this.head = current.next;
-} else {
-    while(count < index) {
-        count++;
-        previous = current;
-        current = current.next;
-    }
-}
+"use strict";
 
 class Node {
-    constructor(data, next = null) {
-        this.data = data;
-        this.next = next;
-    }
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
 }
 
 class LinkedList {
-    constructor() {
-        this.head = null;
-        this.size = 0;
-    }
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
 
-    //insert first node
-    firstNode(data) {
-        this.head = new Node(data, this.head);
+  append(data) {
+    let node = new Node(data);
+    if (this.head === null) {
+      this.head = node;
     }
-
-    //insert last node 
-    lastNode(data) {
-        this.tail = new Node(data, this.tail);
+    if (this.tail) {
+      this.tail.next = node;
     }
-    
-    //get at index(includes)
-    readAtIndex(data) {
-        
+    this.tail = node;
+    this.size++;
+  }
+
+  //insert last node
+  insert(...data) {
+    for (const datum of data) {
+      let node = new Node(datum);
+      node.next = this.head;
+      if (!this.head) {
+          this.tail = node;
+      }
+      this.head = node;
+      this.size++;
     }
+  }
 
-};
+  //get at index(includes)
+  includes(data) {
+    let link = this.head;
+    while (link !== this.tail && link.data !== data) {
+      link = link.next;
+    }
+    return link.data === data;
+  }
+  toString() {
+    let array = [];
+    let link = this.head;
+    while (link !== this.tail) {
+      array.push(link.data);
+      link = link.next;
+    }
+    array.push(link.data);
+    return array.join(", "); // puts a comma space between each element in an array
+  }
+}
 
-return results;
 module.exports = LinkedList;
-
-
-
-
-
-
-
-//return list(toString)
