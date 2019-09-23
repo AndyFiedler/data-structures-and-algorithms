@@ -34,13 +34,18 @@ describe('LinkedList', () => {
         expect(list.includes('3')).toBe(true);
         expect(list.includes('5')).toBe(true);
 
-    })
+    });
     it('will return false when searching for a value in the linked list that does not exist', () => {
         list.insert('1', '3', '5');
         expect(list.includes('2')).toBe(false);
-    })
+    });
     it('Can properly return a collection of all the values that exist in the linked list', () => {
         list.insert('1', '3', '5', '7', '9');
-        expect(list.toString()).toBe('9, 7, 5, 3, 1');
+        expect(list.toString()).toBe('1, 3, 5, 7, 9');
+    });
+    it(' add a new node with the given newValue immediately before the first value node', () => {
+        list.insert('1', '3', '5', '9')
+        list.insertBefore('9', '7')
+        expect(list.toString()).toBe('1, 3, 5, 7, 9');
     })
 });

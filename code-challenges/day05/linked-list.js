@@ -28,6 +28,7 @@ class LinkedList {
 
   //insert last node
   insert(...data) {
+      data.reverse();
     for (const datum of data) {
       let node = new Node(datum);
       node.next = this.head;
@@ -39,7 +40,7 @@ class LinkedList {
     }
   }
 
-  //get at index(includes)
+  //get at index (includes)
   includes(data) {
     let link = this.head;
     while (link !== this.tail && link.data !== data) {
@@ -57,6 +58,40 @@ class LinkedList {
     array.push(link.data);
     return array.join(", "); // puts a comma space between each element in an array
   }
-}
+  insertBefore(data, newData) {
+    if(!this.includes(data)) {
+        throw 'Exception';
+    }
+    
+    let current = this.head;
+    if(current.data === data) {
+        this.insert(newData);
+    } else {
+      while(current.next.data !== data) {
+          current = current.next;
+      }
+      let node = new Node(newData);
+      node.next = current.next;
+      current.next = node;
+    } 
+  };
+  insertAfter(data, newData) {
+    if(!this.includes(data)) {
+        throw 'Exception';
+    }
+    
+    let current = this.head;
+    if(current.data === data) {
+        this.insert(newData);
+    } else {
+      while(current.data !== data) {
+          current = current.next;
+      }
+      let node = new Node(newData);
+      node.next = current.next;
+      current.next = node;
+    } 
+  }
+};
 
 module.exports = LinkedList;
