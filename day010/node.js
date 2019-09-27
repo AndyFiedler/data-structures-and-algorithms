@@ -14,6 +14,7 @@ class LinkedList {
     this.size = 0;
   }
 
+
   append(data) {
     let node = new Node(data);
     if (this.head === null) {
