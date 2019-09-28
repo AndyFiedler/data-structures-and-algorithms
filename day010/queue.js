@@ -1,29 +1,23 @@
-'use strict';
+"use strict";
 
-class Node {
-    constructor(data) {
-      this.data = data;
-      this.next = null;
-    }
-  }
+const LinkedList = require("../code-challenges/day05/linked-list");
 
 class Queue {
-    constructor(){
-        this.front = null;
-        this.back = null;
-    }
+  constructor() {
+    this.list = new LinkedList();
+  }
 
+  enqueue(data) {
+    this.list.append(data);
+  }
 
+  dequeue() {
+    this.list.remove(0);
+  }
 
-enqueue(value) {
-    let node = new Node(value);
+  peek() {
+    this.list.get(0);
+  }
 }
 
-dequeue() {
-
-}
-
-peek() {
-
-}
-}
+module.exports = Queue;

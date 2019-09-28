@@ -8,4 +8,40 @@
 // Can successfully instantiate an empty stack
 
 
-describe
+describe('Queue', () => {
+    it('Can successfully push onto a stack', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+
+    it('Can successfully push multiple values onto a stack', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+
+    it('Can successfully pop off the stack', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+
+    it('Can successfully empty a stack after multiple pops', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+
+    it('Can successfully peek the next item on the stack', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+
+    it('Can successfully instantiate an empty stack', () => {
+        //Arrange
+        //Act
+        //Assert
+    });
+})

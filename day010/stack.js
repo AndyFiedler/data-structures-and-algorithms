@@ -1,43 +1,27 @@
-'use strict';
+"use strict";
 
-class Node {
-    constructor(data) {
-      this.data = data;
-      this.next = null;
-    }
-  }
+const LinkedList = require('../code-challenges/day05/linked-list');
 
 class Stack {
-    constructor() {
-    this.top = null;
-    this.size = 0;
+  constructor() {
+    this.list = new LinkedList;
+  }
+
+  //push value into top of stack
+  push(data) {
+    this.list.insert(data);
+  }
+
+  //removes value from top of stack
+  pop() {
+    return this.list.remove(0);
     }
+  
 
-//push value into top of stack
-push(value) {
-    let node = new Node(value, this.top);
-    this.top = node;
-    this.size++;
-}
-
-//removes value from top of stack
-pop() {
-    let value = null;
-
-    if(this.top) {
-        value = this.top.value;
-        this.top = this.top.nextNode;
-    }
-
-    }
-    
-}
-//returns value from top of stack
-peek() {
-    return this[this.length -1];
+  //returns value from top of stack
+  peek() {
+    return this.list.get(0);
+  }
 
 }
-
-}
-
-export default Stack;
+module.exports = Queue;

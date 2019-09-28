@@ -44,8 +44,13 @@ describe('LinkedList', () => {
         expect(list.toString()).toBe('1, 3, 5, 7, 9');
     });
     it(' add a new node with the given newValue immediately before the first value node', () => {
-        list.insert('1', '3', '5', '9')
-        list.insertBefore('9', '7')
+        list.insert('1', '3', '5', '9');
+        list.insertBefore('9', '7');
         expect(list.toString()).toBe('1, 3, 5, 7, 9');
+    })
+    it('remove method can remove from tail if you omit the index', () => {
+        list.insert('1', '3', '5', '7', '9');
+        list.remove(4);
+        expect(list.toString()).toBe('1, 3, 5, 7');
     })
 });
