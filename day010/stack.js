@@ -23,5 +23,8 @@ class Stack {
     return this.list.get(0);
   }
 
+  toString() {
+    return this.list.toString();
+  }
 }
 module.exports = Queue;

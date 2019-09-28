@@ -12,11 +12,19 @@ class Queue {
   }
 
   dequeue() {
-    this.list.remove(0);
+    return this.list.remove(0);
   }
 
   peek() {
-    this.list.get(0);
+    return this.list.get(0);
+  }
+
+  toString() {
+    return this.list.toString();
+  }
+
+  getSize() {
+    return this.list.size;
   }
 }
 
