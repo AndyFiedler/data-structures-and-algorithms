@@ -10,7 +10,7 @@ describe('LinkedList', () => {
 
     it('can succesfully instantiate an empty linked list', () => {
         //Arrange
-        //Act
+        //Acts
         //Assert
         expect(list.head).toBe(null);
         expect(list.size).toBe(0);
