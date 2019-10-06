@@ -28,7 +28,7 @@ class AnimalShelter {
 }
 
 enqueue(animal) {
-    this.list.push(animal);
+    this.list.append(animal);
 
 }
 
