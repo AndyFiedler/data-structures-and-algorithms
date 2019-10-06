@@ -9,11 +9,12 @@ class Node {
     } 
 } 
 
-class BinarySearchTree 
-{ 
+class BinarySearchTree { 
     constructor() { 
         this.root = null; 
     } 
 }
 
 // Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+
+preOrder()
