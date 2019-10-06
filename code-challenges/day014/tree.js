@@ -13,28 +13,29 @@ class BinaryTree {
     this.height = 0;
     this.size = 0;
   }
-  inorder(node = this.root, array = []) {
+  // Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+  inOrder(node = this.root, array = []) {
     if (node !== null) {
-      this.inorder(node.left);
+      this.inOrder(node.left, array);
       array.push(node.data);
-      this.inorder(node.right);
+      this.inOrder(node.right, array);
     }
     return array;
   }
 
-  preorder(node = this.root, array = []) {
+  preOrder(node = this.root, array = []) {
     if (node != null) {
       array.push(node.data);
-      this.preorder(node.left);
-      this.preorder(node.right);
+      this.preOrder(node.left, array);
+      this.preOrder(node.right, array);
     }
     return array;
   }
 
-  postorder(node = this.root, array = []) {
+  postOrder(node = this.root, array = []) {
     if (node != null) {
-      this.postorder(node.left);
-      this.postorder(node.right);
+      this.postOrder(node.left, array);
+      this.postOrder(node.right, array);
       array.push(node.data);
     }
     return array;
@@ -50,24 +51,22 @@ class BinarySearchTree extends BinaryTree {
       this.size = 1;
       return;
     }
+    this.size++;
+    depth++;
     if (data <= curr.data) {
       if (!curr.left) {
         curr.left = new Node(data);
-        return depth + 1;
+        this.height = Math.max(depth, this.height);
+        return;
       }
-      const newHeight = add(data, curr.left, depth + 1);
-      if (this.height < newHeight) {
-        this.height = newHeight;
-      }
+      this.add(data, curr.left, depth);
     } else {
       if (!curr.right) {
         curr.right = new Node(data);
-        return depth + 1;
+        this.height = Math.max(depth, this.height);
+        return;
       }
-      const newHeight = add(data, curr.right, depth + 1);
-      if (this.height < newHeight) {
-        this.height = newHeight;
-      }
+      this.add(data, curr.right, depth);
     }
   }
   contains(data, node = this.root) {
@@ -77,11 +76,13 @@ class BinarySearchTree extends BinaryTree {
     if (node.data === data) {
       return true;
     }
-    if (node.data > data) {
+    if (node.data >= data) {
       return this.contains(data, node.left);
     }
     return this.contains(data, node.right);
   }
 }
 
-// Define a method for each of the depth first traversals called preOrder, inOrder, and postOrder which returns an array of the values, ordered appropriately.
+module.exports = {BinaryTree, BinarySearchTree};
+
+
