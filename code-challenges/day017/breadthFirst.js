@@ -2,6 +2,10 @@
 
 const BinarySearchTree = require('../day017/BinarySearchTree');
 
+let bst = new BinarySearchTree();
+
+bst.add(2);
+bst.add(2)
 
 class Node {
   constructor(data) {
