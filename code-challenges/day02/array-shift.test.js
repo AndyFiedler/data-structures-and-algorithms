@@ -1,7 +1,7 @@
 //Write a function called insertShiftArray which takes in an array and the value to be added. Without utilizing any of the built-in methods available to your language, return an array with the new value added at the middle index.
 const insertShift = require('./array-shift');
 
-describe('array-shift', () => {
+describe.skip('array-shift', () => {
   it('takes in an array and the value and returns a new array with new value added to middle', () =>{
     let array = [6, 5, 4, 3, 2, 1];
     

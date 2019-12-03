@@ -15,6 +15,12 @@ while (n !== value) {
 console.log(n);
 }
 
+describe('Nothin', () => {
+    it('Does nothin', () => {
+
+    });
+});
+
 // for(let i =0; i < array.length; i++){
         
 // }
