@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function rangeCheck(index, size) {
   if (size <= index || index < 0) {
@@ -62,11 +62,11 @@ class LinkedList {
       link = link.next;
     }
     array.push(link.data);
-    return array.join(", "); // puts a comma space between each element in an array
+    return array.join(', '); // puts a comma space between each element in an array
   }
   insertBefore(data, newData) {
     if (!this.includes(data)) {
-      throw "Value not found";
+      throw 'Value not found';
     }
 
     let current = this.head;
@@ -83,7 +83,7 @@ class LinkedList {
   }
   insertAfter(data, newData) {
     if (!this.includes(data)) {
-      throw "Value not found";
+      throw 'Value not found';
     }
 
     let current = this.head;
@@ -101,12 +101,12 @@ class LinkedList {
   get(index) {
     rangeCheck(index, this.size);
     let current = this.head;
-      let i = 0;
-      while(i < index){
-        current = current.next;
-        i++;
-      }
-      return current.data;
+    let i = 0;
+    while(i < index){
+      current = current.next;
+      i++;
+    }
+    return current.data;
   }
   remove(index = this.size - 1) {
     rangeCheck(index, this.size);
