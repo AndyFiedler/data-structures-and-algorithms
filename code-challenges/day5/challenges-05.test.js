@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1
@@ -46,38 +46,38 @@ Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
 
 const gruffaloCrumble = {
-  name: "How to make a Gruffalo Crumble",
+  name: 'How to make a Gruffalo Crumble',
   ingredients: [
-    "1 medium-sized Gruffalo",
-    "8 pounds oats",
-    "2 pounds brown sugar",
-    "4 pounds flour",
-    "2 gallons pure maple syrup",
-    "16 cups chopped nuts",
-    "1 pound baking soda",
-    "1 pound baking powder",
-    "1 pound cinnamon",
-    "6 gallons melted butter",
-    "2 gallons fresh water"
+    '1 medium-sized Gruffalo',
+    '8 pounds oats',
+    '2 pounds brown sugar',
+    '4 pounds flour',
+    '2 gallons pure maple syrup',
+    '16 cups chopped nuts',
+    '1 pound baking soda',
+    '1 pound baking powder',
+    '1 pound cinnamon',
+    '6 gallons melted butter',
+    '2 gallons fresh water'
   ],
   steps: [
-    "Pre-heat a large oven to 375",
-    "De-prickle the gruffalo",
-    "Sprinkle with cinnamon, sugar, flour, and nuts",
-    "Mix until evenly distributed",
-    "Grease a 3-foot x 3-foot casserole dish",
-    "Combine gruffalo compote with water to maintain moisture in the oven",
-    "Fold together remaining ingredients to make the crisp",
-    "Spread the crisp evenly over the gruffalo mixture",
-    "Bake for 12-15 hours"
+    'Pre-heat a large oven to 375',
+    'De-prickle the gruffalo',
+    'Sprinkle with cinnamon, sugar, flour, and nuts',
+    'Mix until evenly distributed',
+    'Grease a 3-foot x 3-foot casserole dish',
+    'Combine gruffalo compote with water to maintain moisture in the oven',
+    'Fold together remaining ingredients to make the crisp',
+    'Spread the crisp evenly over the gruffalo mixture',
+    'Bake for 12-15 hours'
   ]
 };
 
 const listFoods = recipe => {
   let result = [];
-    for(let ingredient of recipe.ingredients) {
-        result.push(ingredient.split(' ').slice(2).join(' '));
-    }
+  for(let ingredient of recipe.ingredients) {
+    result.push(ingredient.split(' ').slice(2).join(' '));
+  }
   return result;
 };
 
@@ -93,7 +93,7 @@ const splitFoods = recipe => {
   let result = [];
   for(let ingredient of recipe.ingredients) {
     result.push(ingredient.split(' ').slice(2).join(' '));
-}
+  }
   return result;
 };
 
@@ -109,9 +109,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = recipe => {
   let result = [];
-    for(let step of recipe.steps) {
-        result.push(step.slice(0, step.indexOf(' ')));
-    }
+  for(let step of recipe.steps) {
+    result.push(step.slice(0, step.indexOf(' ')));
+  }
   return result;
 };
 
@@ -129,11 +129,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = arr => {
- for( let i = 0; i < arr.length; i++){
-   if(arr[i] % 2 === 0){
-     arr.splice(i--, 1);
-   }
- }
+  for( let i = 0; i < arr.length; i++){
+    if(arr[i] % 2 === 0){
+      arr.splice(i--, 1);
+    }
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,10 +153,10 @@ removeLastCharacters('Gregor', 9) returns ''
 
 const removeLastCharacters = (str, numberOfCharacters) => {
   if(numberOfCharacters <= 0){
-  return str;
+    return str;
   }
   if(numberOfCharacters > str.length){
-  return '';
+    return '';
   }
   return str.slice(0, -numberOfCharacters);
 
@@ -211,103 +211,103 @@ Run your tests from the console: jest challenges-05.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe("Testing challenge 1", () => {
-  test("It should return a list of shortening words", () => {
-    expect(howMuchPencil("Welcome")).toStrictEqual([
-      "Welcome",
-      "elcome",
-      "lcome",
-      "come",
-      "ome",
-      "me",
-      "e",
-      ""
+describe.skip('Testing challenge 1', () => {
+  test('It should return a list of shortening words', () => {
+    expect(howMuchPencil('Welcome')).toStrictEqual([
+      'Welcome',
+      'elcome',
+      'lcome',
+      'come',
+      'ome',
+      'me',
+      'e',
+      ''
     ]);
-    expect(howMuchPencil("Welcome").length).toStrictEqual(8);
-    expect(howMuchPencil("")).toStrictEqual([""]);
-    expect(howMuchPencil("abc")).toStrictEqual(["abc", "bc", "c", ""]);
+    expect(howMuchPencil('Welcome').length).toStrictEqual(8);
+    expect(howMuchPencil('')).toStrictEqual(['']);
+    expect(howMuchPencil('abc')).toStrictEqual(['abc', 'bc', 'c', '']);
   });
 });
 
-describe("Testing challenge 2", () => {
-  test("It should return an array of individual letters", () => {
-    expect(wordsToCharList("Gregor")).toStrictEqual([
-      "G",
-      "r",
-      "e",
-      "g",
-      "o",
-      "r"
+describe.skip('Testing challenge 2', () => {
+  test('It should return an array of individual letters', () => {
+    expect(wordsToCharList('Gregor')).toStrictEqual([
+      'G',
+      'r',
+      'e',
+      'g',
+      'o',
+      'r'
     ]);
-    expect(wordsToCharList("Gregor").length).toStrictEqual(6);
-    expect(wordsToCharList("hooray")).toStrictEqual([
-      "h",
-      "o",
-      "o",
-      "r",
-      "a",
-      "y"
+    expect(wordsToCharList('Gregor').length).toStrictEqual(6);
+    expect(wordsToCharList('hooray')).toStrictEqual([
+      'h',
+      'o',
+      'o',
+      'r',
+      'a',
+      'y'
     ]);
-    expect(wordsToCharList("")).toStrictEqual([]);
+    expect(wordsToCharList('')).toStrictEqual([]);
   });
 });
 
-describe("Testing challenge 3", () => {
-  test("It should return a list of foods", () => {
+describe.skip('Testing challenge 3', () => {
+  test('It should return a list of foods', () => {
     expect(listFoods(gruffaloCrumble)).toStrictEqual([
-      "Gruffalo",
-      "oats",
-      "brown sugar",
-      "flour",
-      "pure maple syrup",
-      "chopped nuts",
-      "baking soda",
-      "baking powder",
-      "cinnamon",
-      "melted butter",
-      "fresh water"
+      'Gruffalo',
+      'oats',
+      'brown sugar',
+      'flour',
+      'pure maple syrup',
+      'chopped nuts',
+      'baking soda',
+      'baking powder',
+      'cinnamon',
+      'melted butter',
+      'fresh water'
     ]);
     expect(listFoods(gruffaloCrumble).length).toStrictEqual(11);
   });
 });
 
-describe("Testing challenge 4", () => {
-  test("It should return a list of foods", () => {
+describe.skip('Testing challenge 4', () => {
+  test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual([
-      "Gruffalo",
-      "oats",
-      "brown sugar",
-      "flour",
-      "pure maple syrup",
-      "chopped nuts",
-      "baking soda",
-      "baking powder",
-      "cinnamon",
-      "melted butter",
-      "fresh water"
+      'Gruffalo',
+      'oats',
+      'brown sugar',
+      'flour',
+      'pure maple syrup',
+      'chopped nuts',
+      'baking soda',
+      'baking powder',
+      'cinnamon',
+      'melted butter',
+      'fresh water'
     ]);
   });
 });
 
-describe("Testing challenge 5", () => {
-  test("It should return a list of recipe steps", () => {
+describe.skip('Testing challenge 5', () => {
+  test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual([
-      "Pre-heat",
-      "De-prickle",
-      "Sprinkle",
-      "Mix",
-      "Grease",
-      "Combine",
-      "Fold",
-      "Spread",
-      "Bake"
+      'Pre-heat',
+      'De-prickle',
+      'Sprinkle',
+      'Mix',
+      'Grease',
+      'Combine',
+      'Fold',
+      'Spread',
+      'Bake'
     ]);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-describe("Testing challenge 6", () => {
-  test("It should remove the even numbers from the array", () => {
+describe.skip('Testing challenge 6', () => {
+  test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
     expect(list).toStrictEqual([1, 3, 5]);
@@ -319,46 +319,46 @@ describe("Testing challenge 6", () => {
   });
 });
 
-describe("Testing challenge 7", () => {
-  test("It should shorten the string based on the first argument", () => {
-    expect(removeLastCharacters("Gregor", 2)).toStrictEqual("Greg");
-    expect(removeLastCharacters("Gregor", 2).length).toStrictEqual(4);
+describe.skip('Testing challenge 7', () => {
+  test('It should shorten the string based on the first argument', () => {
+    expect(removeLastCharacters('Gregor', 2)).toStrictEqual('Greg');
+    expect(removeLastCharacters('Gregor', 2).length).toStrictEqual(4);
   });
-  test("It should return the complete string when passed a negative number", () => {
-    expect(removeLastCharacters("hello", -1)).toStrictEqual("hello");
-    expect(removeLastCharacters("wowow", -700)).toStrictEqual("wowow");
+  test('It should return the complete string when passed a negative number', () => {
+    expect(removeLastCharacters('hello', -1)).toStrictEqual('hello');
+    expect(removeLastCharacters('wowow', -700)).toStrictEqual('wowow');
   });
-  test("It should return an empty string when called with a number larger than the string length", () => {
-    expect(removeLastCharacters("hello", 12)).toStrictEqual("");
-    expect(removeLastCharacters("", 1)).toStrictEqual("");
-    expect(removeLastCharacters("a", 1)).toStrictEqual("");
-  });
-});
-
-describe("Testing challenge 8", () => {
-  test("It should add up the numbers contained within the string", () => {
-    expect(totalSumCSV("1,4,5,7,2")).toStrictEqual(19);
-    expect(totalSumCSV("147")).toStrictEqual(147);
+  test('It should return an empty string when called with a number larger than the string length', () => {
+    expect(removeLastCharacters('hello', 12)).toStrictEqual('');
+    expect(removeLastCharacters('', 1)).toStrictEqual('');
+    expect(removeLastCharacters('a', 1)).toStrictEqual('');
   });
 });
 
-describe("Testing challenge 9", () => {
-  test("It should return the string without vowels", () => {
-    expect(removeVowels("gregor")).toStrictEqual("grgr");
-    expect(removeVowels("gregor").length).toStrictEqual(4);
-    expect(removeVowels("asdf")).toStrictEqual("sdf");
-    expect(removeVowels("why")).toStrictEqual("why");
+describe.skip('Testing challenge 8', () => {
+  test('It should add up the numbers contained within the string', () => {
+    expect(totalSumCSV('1,4,5,7,2')).toStrictEqual(19);
+    expect(totalSumCSV('147')).toStrictEqual(147);
   });
 });
 
-describe("Testing challenge 10", () => {
-  test("It should return the string without vowels", () => {
-    expect(extractVowels("gregor")).toStrictEqual(["grgr", "eo"]);
-    expect(extractVowels("gregor").length).toStrictEqual(2);
+describe.skip('Testing challenge 9', () => {
+  test('It should return the string without vowels', () => {
+    expect(removeVowels('gregor')).toStrictEqual('grgr');
+    expect(removeVowels('gregor').length).toStrictEqual(4);
+    expect(removeVowels('asdf')).toStrictEqual('sdf');
+    expect(removeVowels('why')).toStrictEqual('why');
+  });
+});
 
-    expect(extractVowels("The quick brown fox")).toStrictEqual([
-      "Th qck brwn fx",
-      "eioou"
+describe.skip('Testing challenge 10', () => {
+  test('It should return the string without vowels', () => {
+    expect(extractVowels('gregor')).toStrictEqual(['grgr', 'eo']);
+    expect(extractVowels('gregor').length).toStrictEqual(2);
+
+    expect(extractVowels('The quick brown fox')).toStrictEqual([
+      'Th qck brwn fx',
+      'eioou'
     ]);
   });
 });

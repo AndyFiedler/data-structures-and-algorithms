@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const LinkedList = require('../code-challenges/day05/linked-list');
 
@@ -15,8 +15,8 @@ class Stack {
   //removes value from top of stack
   pop() {
     return this.list.remove(0);
-    }
-  
+  }
+
 
   //returns value from top of stack
   peek() {
@@ -27,4 +27,4 @@ class Stack {
     return this.list.toString();
   }
 }
-module.exports = Queue;
+module.exports = Stack;
