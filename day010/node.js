@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 class Node {
   constructor(data) {
@@ -29,12 +29,12 @@ class LinkedList {
 
   //insert last node
   insert(...data) {
-      data.reverse();
+    data.reverse();
     for (const datum of data) {
       let node = new Node(datum);
       node.next = this.head;
       if (!this.head) {
-          this.tail = node;
+        this.tail = node;
       }
       this.head = node;
       this.size++;
@@ -57,42 +57,42 @@ class LinkedList {
       link = link.next;
     }
     array.push(link.data);
-    return array.join(", "); // puts a comma space between each element in an array
+    return array.join(', '); // puts a comma space between each element in an array
   }
   insertBefore(data, newData) {
     if(!this.includes(data)) {
-        throw 'Value not found';
+      throw 'Value not found';
     }
-    
+
     let current = this.head;
     if(current.data === data) {
-        this.insert(newData);
+      this.insert(newData);
     } else {
       while(current.next.data !== data) {
-          current = current.next;
+        current = current.next;
       }
       let node = new Node(newData);
       node.next = current.next;
       current.next = node;
-    } 
-  };
+    }
+  }
   insertAfter(data, newData) {
     if(!this.includes(data)) {
-        throw 'Value not found';
+      throw 'Value not found';
     }
-    
+
     let current = this.head;
     if(current.data === data) {
-        this.insert(newData);
+      this.insert(newData);
     } else {
       while(current.data !== data) {
-          current = current.next;
+        current = current.next;
       }
       let node = new Node(newData);
       node.next = current.next;
       current.next = node;
-    } 
+    }
   }
-};
+}
 
 module.exports = LinkedList;

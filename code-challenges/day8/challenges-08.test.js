@@ -19,7 +19,7 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   const result = arr.filter(num % 2 !== 0);
-    return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   const result = arr.filter(string => string.matches(/[aeiou]+/i));
-    return result;
+  return result;
 };
 
 
@@ -49,10 +49,10 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   //return !forbiddenValues.includes(arr);
-    return arr.filter((element) => {
-      return !forbiddenValues.includes(element);
-    });
-    /*
+  return arr.filter((element) => {
+    return !forbiddenValues.includes(element);
+  });
+  /*
     return arr.filter( function (element) {
       return !forbiddenValues.includes(element);
     });*/
@@ -101,7 +101,7 @@ const snorlaxData = {
 // For example, getBaseStatGreaterThan(snorlaxData.stats, 50) will return an array containing the 'special-defense' and 'special-attack' objects.
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
   const result = arr.filter(stat => stat.baseStat > minBaseStat);
-    return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,13 +114,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 
 const getStatName = (arr, minBaseStat) => {
   const result = arr.filter(stat => stat.baseStat > minBaseStat).map(stat.name);
-    return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children. 
+Write a function named getCharactersWithoutChildren that, given the array of characters, below, uses filter to return an array of all characters without children.
 ------------------------------------------------------------------------------------------------ */
 
 const characters = [
@@ -168,7 +168,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   const result = arr.filter(character => !character.children);
-    return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

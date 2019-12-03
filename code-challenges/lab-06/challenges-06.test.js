@@ -132,7 +132,7 @@ const totalCharacters = (arr) => {
       characters.push(person.name);
     }
     if(!characters.includes(person.spouse)){
-    characters.push(person.spouse);
+      characters.push(person.spouse);
     }
     for(let child of person.children){
       if(!characters.includes(child)){
@@ -155,7 +155,7 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 
 const houseSize = (arr) => {
   const sizes = [];
-    
+
   return sizes;
 };
 

@@ -17,7 +17,7 @@ const count = (target, input) => {
       if(number === target) {
         return acc + 1
       }
-      
+
     }, 0)
   });
 };
@@ -33,12 +33,12 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 //.filter returns something based on whether its true or false
 const totalSum = (input) => {
-   const result = input.reduce((acc, array) => {
-     return acc + array.reduce((total, num) => {
-       return total + num;
-     } )
-   }, 0)
-   return result;
+  const result = input.reduce((acc, array) => {
+    return acc + array.reduce((total, num) => {
+      return total + num;
+    } )
+  }, 0)
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   const result = input.map(arr => arr.filter(element => typeof element === 'number' && element % 5 === 0).map(num => Math.pow(2, num)));
-    return result;
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------

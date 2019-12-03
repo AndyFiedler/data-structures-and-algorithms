@@ -9,9 +9,9 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-    const pinPattern = /^[0-9]{4}$/g;
+  const pinPattern = /^[0-9]{4}$/g;
 
-    return pinPattern.test(pin);
+  return pinPattern.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -31,10 +31,10 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 ------------------------------------------------------------------------------------------------ */
 
 const validateEmail = (email) => {
-    //stack overflow lookup broh/////////////////////////////////////////////
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //
-    return re.test(String(email).toLowerCase());
+  //stack overflow lookup broh/////////////////////////////////////////////
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  //
+  return re.test(String(email).toLowerCase());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,8 +74,8 @@ findTagNames(['<div><h1>Hello, world!</h1></div>', '<p>Welcome to my site</p>'])
 ------------------------------------------------------------------------------------------------ */
 
 const findTagNames = elements => {
-    //calvin code.
-   return elements.reduce((closingTags, current) => closingTags.concat(current.match(/<\/[\w\d]+>/g)), []).map((tag) => tag.slice(1, tag.length - 1));
+  //calvin code.
+  return elements.reduce((closingTags, current) => closingTags.concat(current.match(/<\/[\w\d]+>/g)), []).map((tag) => tag.slice(1, tag.length - 1));
 };
 
 /* ------------------------------------------------------------------------------------------------

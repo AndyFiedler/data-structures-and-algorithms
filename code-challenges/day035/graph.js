@@ -33,7 +33,7 @@ class Graph {
     if (!this.includes(vertex)) throw `Graph does not include: ${from}`;
     return [...this.adjacencyMap.get(vertex)];
   }
-  
+
 }
 
 module.exports = Graph;

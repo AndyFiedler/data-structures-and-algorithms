@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const LinkedList = require("../code-challenges/day05/linked-list");
+const LinkedList = require('../code-challenges/day05/linked-list');
 
 class Queue {
   constructor() {

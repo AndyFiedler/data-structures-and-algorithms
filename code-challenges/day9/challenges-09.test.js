@@ -11,8 +11,8 @@ Note: You may not use the array's built-in length property.
 const countNumberOfElements = (arr) => {
   return arr.reduce((acc) => {
     return acc +1;
-  
-}, 0);}
+
+  }, 0);}
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -72,8 +72,8 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   arr.reduce((acc, element) => {
-      acc.push(element.name);
-      return acc;
+    acc.push(element.name);
+    return acc;
   }, [])
 };
 
@@ -142,9 +142,9 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   return arr.reduce((acc, element) =>{
-      if(element.children){
-          return acc + element.children.length;
-      }
+    if(element.children){
+      return acc + element.children.length;
+    }
   }, 0);
 };
 
@@ -184,7 +184,7 @@ const isPrime = (value) => {
 const countPrimeNumbers = (arr) => {
   return arr.reduce((acc, number) =>{
     if(isPrime(number)){
-        return acc + number;
+      return acc + number;
     }
   })
 };

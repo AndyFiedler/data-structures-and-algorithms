@@ -12,7 +12,7 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   for (let i =0; i < str.length +1; i++);
-    result.push(str.slice(i));
+  result.push(str.slice(i));
 
   return result;
 };
@@ -26,7 +26,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   return [...arr];
 
-  };
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ const mapTwoToThe = (arr) => {
     let withoutAmount = ingredient.slice(ingredient.indexOf(' ') + 1);
     let withoutUnits = withoutAmount.slice(withoutAmount.indexOf(' ') + 1);
     result.push(withoutUnits);
-});
+  });
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -68,7 +68,7 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -114,7 +114,7 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
