@@ -27,4 +27,4 @@ class Stack {
     return this.list.toString();
   }
 }
-module.exports = Queue;
+module.exports = Stack;

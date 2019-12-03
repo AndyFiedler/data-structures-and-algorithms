@@ -1,7 +1,7 @@
 'use strict';
 
-describe('Stack', () => {
-    describe('Queue', () => {
+describe.skip('Stack', () => {
+    describe.skip('Queue', () => {
         let stack
         beforeEach(() => {
             stack = new Stack();
@@ -57,4 +57,5 @@ describe('Stack', () => {
         //Act
         //Assert
     });
-})
+});
+});
