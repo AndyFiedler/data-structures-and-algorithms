@@ -2,7 +2,7 @@
 
 let LinkedList = require('./linked-list');
 
-describe.skip('LinkedList', () => {
+describe('LinkedList', () => {
   let list;
   beforeEach(() => {
     list = new LinkedList();
