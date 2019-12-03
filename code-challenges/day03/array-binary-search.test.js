@@ -1,26 +1,20 @@
-'use strict'
+const binarySearch = require('./array-binary-search');
 
-//divide and conquer algorithms
-
-let array1 = [4, 8, 15, 16, 23, 42];
-let array2 = [11, 22, 33, 44, 55, 66, 77];
-
-const searchBinarily =(array, value) => {
-  var n = 0;
-
-  while (n !== value) {
-
-  }
-
-  console.log(n);
-}
-
-describe('Nothin', () => {
-  it('Does nothin', () => {
-
-  });
-});
-
-// for(let i =0; i < array.length; i++){
-
-// }
+describe('binary search', () => {
+    it('can find the index of a value in an array', () => {
+        let array = [3, 5, 2, 7, 1];
+        expect(binarySearch(array, 2)).toBe(2);
+    });
+    it('can find the index of a value in an array with a single item', () => {
+        let array =[7];
+        expect(binarySearch(array, 7)).toBe(0);
+    });
+    it('returns -1 if the array aint got the droids you was looking for', () => {
+        let array = [3, 5, 2, 7, 1];
+        expect(binarySearch(array, 9)).toBe(-1);
+    });
+    it('can handle an empty array', () => {
+        let array =[];
+        expect(binarySearch(array, 9)).toBe(-1);
+    });
+})
