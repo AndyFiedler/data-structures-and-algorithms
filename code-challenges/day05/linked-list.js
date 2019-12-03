@@ -122,7 +122,7 @@ class LinkedList {
         i++;
       }
       let remove = current.next;
-      if(remove = this.tail){
+      if(remove === this.tail){
         current.next = null;
         this.tail = current;
       } else {
