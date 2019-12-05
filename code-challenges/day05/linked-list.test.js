@@ -53,4 +53,29 @@ describe('LinkedList', () => {
     list.remove(4);
     expect(list.toString()).toBe('1, 3, 5, 7');
   })
+
+  it('append method can add a new node at the end of the list', () => {
+    list.insert('1', '3', '5', '7');
+    expect(list.toString()).toBe('1, 3, 5, 7');
+    list.append('9');
+    expect(list.toString()).toBe('1, 3, 5, 7, 9');
+  })
+
+  it('insertBefore can insert a new node before the first value node', () => {
+    list.insert('1', '3', '5', '7');
+    expect(list.toString()).toBe('1, 3, 5, 7');
+    list.insertBefore('1', '-1');
+    expect(list.toString()).toBe('-1, 1, 3, 5, 7');
+    list.insertBefore('5', '9');
+    expect(list.toString()).toBe('-1, 1, 3, 9, 5, 7');
+  })
+
+  it('insertAfter can add a node after the given first value node', () => {
+    list.insert('1', '3', '5', '7');
+    expect(list.toString()).toBe('1, 3, 5, 7');
+    list.insertAfter('7', '9');
+    expect(list.toString()).toBe('1, 3, 5, 7, 9');
+    list.insertAfter('3', '4');
+    expect(list.toString()).toBe('1, 3, 4, 5, 7, 9');
+  })
 });
