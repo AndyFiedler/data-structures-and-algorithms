@@ -10,7 +10,7 @@ const Stack = require('./stack');
 // Can successfully instantiate an empty stack
 
 
-describe.skip('Stack', () => {
+describe('Stack', () => {
   let stack
   beforeEach(() => {
     stack = new Stack();
