@@ -1,5 +1,11 @@
 'use strict';
 
+// Write the following methods for the Linked List class:
+
+// .append(value) which adds a new node with the given value to the end of the list
+// .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+// .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
 function rangeCheck(index, size) {
   if (size <= index || index < 0) {
     throw new Error(`Array index out of bounds: ${index}`);
@@ -88,7 +94,7 @@ class LinkedList {
 
     let current = this.head;
     if (current.data === data) {
-      this.insert(newData);
+      this.append(newData);
     } else {
       while (current.data !== data) {
         current = current.next;
@@ -96,6 +102,9 @@ class LinkedList {
       let node = new Node(newData);
       node.next = current.next;
       current.next = node;
+      if(current === this.tail) {
+        this.tail = node;
+      }
     }
   }
   get(index) {
