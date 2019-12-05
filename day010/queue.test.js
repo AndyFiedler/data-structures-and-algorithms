@@ -9,7 +9,7 @@ const Queue = require('./queue');
 // Can successfully empty a queue after multiple dequeues
 // Can successfully instantiate an empty queue
 
-describe.skip('Queue', () => {
+describe('Queue', () => {
   let queue
   beforeEach(() => {
     queue = new Queue();
@@ -29,14 +29,14 @@ describe.skip('Queue', () => {
 
   it('Can successfully dequeue out of a queue the expected value', () => {
     queue.enqueue(1);
-    queue.enqueue(2)
+    queue.enqueue(2);
     queue.dequeue();
-    expect(queue.toString()).toBe('1');
+    expect(queue.toString()).toBe('2');
   });
 
   it('Can successfully peek into a queue, seeing the expected value', () => {
     queue.enqueue(9);
-    expect(queue.peek()).toBe('9');
+    expect(queue.peek()).toBe(9);
   });
 
   it('Can successfully empty a queue after multiple dequeues', () => {
