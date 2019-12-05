@@ -23,10 +23,11 @@ class Node {
 }
 
 class LinkedList {
-  constructor() {
+  constructor(...elements) {
     this.head = null;
     this.tail = null;
     this.size = 0;
+    elements.forEach(element => this.append(element));
   }
 
   append(data) {
@@ -41,7 +42,6 @@ class LinkedList {
     this.size++;
   }
 
-  //insert last node
   insert(...data) {
     data.reverse();
     for (const datum of data) {
@@ -127,6 +127,36 @@ class LinkedList {
       i++;
     }
     return current.data;
+  }
+  /*
+  A = [1, 3, 5, 7]
+  B = [2, 4, 6, 8]
+  mergeList(A, B) = [1, 2, 3, 4, 5, 6, 7, 8]
+  */
+  static mergeLists(listA, listB) {
+    if (listA.size === 0) return listB;
+    if (listB.size === 0) return listA;
+    //Do A
+    let current = listA.head;
+    let listACurrent = current.next;
+    let listBCurrent = listB.head;
+    while (listACurrent || listBCurrent) {
+      //Do B (again)
+      if (listBCurrent) {
+        current.next = listBCurrent;
+        listBCurrent = listBCurrent.next;
+        current = current.next;
+      }
+      //Do A (again)
+      if (listACurrent) {
+        current.next = listACurrent;
+        listACurrent = listACurrent.next;
+        current = current.next;
+      }
+    }
+    listA.size = listA.size + listB.size;
+    listA.tail = current;
+    return listA;
   }
   remove(index = this.size - 1) {
     rangeCheck(index, this.size);

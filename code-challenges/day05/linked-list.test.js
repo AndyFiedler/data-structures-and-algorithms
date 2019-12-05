@@ -86,4 +86,19 @@ describe('LinkedList', () => {
     expect(list.kthFromEnd(2)).toBe('3');
     expect(list.kthFromEnd(3)).toBe('1');
   })
+  it('mergeLists can take in two linked lists and zip em together alternating between the two lists, returns the mergedLists', () => {
+    const listA = new LinkedList(1, 3, 5, 7);
+    const listB = new LinkedList(2, 4, 6, 8);
+    expect(LinkedList.mergeLists(listA, listB).toString()).toBe('1, 2, 3, 4, 5, 6, 7, 8');
+  })
+  it('mergeLists can merge uneven lists', () => {
+    const listA = new LinkedList(1, 3, 5, 7);
+    const listB = new LinkedList(2, 4, 6, 8, 10);
+    expect(LinkedList.mergeLists(listA, listB).toString()).toBe('1, 2, 3, 4, 5, 6, 7, 8, 10');
+  })
+  it('mergeLists can merge with an empty list', () => {
+    const listA = new LinkedList(1, 3, 5, 7);
+    const listB = new LinkedList();
+    expect(LinkedList.mergeLists(listA, listB).toString()).toBe('1, 3, 5, 7');
+  })
 });
