@@ -78,4 +78,12 @@ describe('LinkedList', () => {
     list.insertAfter('3', '4');
     expect(list.toString()).toBe('1, 3, 4, 5, 7, 9');
   })
+  it('kthFromEnd can return the element that is the nth node from the end', () => {
+    list.insert('1', '3', '5', '7');
+    expect(list.toString()).toBe('1, 3, 5, 7');
+    expect(list.kthFromEnd(0)).toBe('7');
+    expect(list.kthFromEnd(1)).toBe('5');
+    expect(list.kthFromEnd(2)).toBe('3');
+    expect(list.kthFromEnd(3)).toBe('1');
+  })
 });

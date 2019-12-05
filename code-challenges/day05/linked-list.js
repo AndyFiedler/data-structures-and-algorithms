@@ -6,6 +6,9 @@
 // .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 // .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
+//ccday7
+// Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
 function rangeCheck(index, size) {
   if (size <= index || index < 0) {
     throw new Error(`Array index out of bounds: ${index}`);
@@ -85,6 +88,7 @@ class LinkedList {
       let node = new Node(newData);
       node.next = current.next;
       current.next = node;
+      this.size++;
     }
   }
   insertAfter(data, newData) {
@@ -105,7 +109,14 @@ class LinkedList {
       if(current === this.tail) {
         this.tail = node;
       }
+      this.size++;
     }
+  }
+  kthFromEnd(k) {
+    if (k >= this.size) {
+      throw 'There aren\'t enough elements';
+    }
+    return this.get(this.size - (k + 1));
   }
   get(index) {
     rangeCheck(index, this.size);
