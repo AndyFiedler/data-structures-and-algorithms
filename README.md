@@ -9,3 +9,9 @@ Create a brand new PseudoQueue class. Do not use an existing Queue. Instead, thi
 enqueue(value) which inserts value into the PseudoQueue, using a first-in, first-out approach.
 dequeue() which extracts a value from the PseudoQueue, using a first-in, first-out approach.
 The Stack instances have only push, pop, and peek methods. You should use your own Stack implementation. Instantiate these Stack objects in your PseudoQueue constructor.
+
+code challenge 12:
+Create a class called AnimalShelter which holds only dogs and cats. The shelter operates using a first-in, first-out approach.
+Implement the following methods:
+enqueue(animal): adds animal to the shelter. animal can be either a dog or a cat object.
+dequeue(pref): returns either a dog or a cat. If pref is not "dog" or "cat" then return null.

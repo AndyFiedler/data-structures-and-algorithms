@@ -183,6 +183,19 @@ class LinkedList {
     this.size--;
     return toReturn;
   }
+  forEach(callback) {
+    let i = 0;
+    for (const value of this) {
+      callback(value, i++);
+    }
+  }
+  *[Symbol.iterator]() {
+    let curr = this.head;
+    while (curr !== null) {
+      yield curr.data;
+      curr = curr.next;
+    }
+  }
 }
 
 module.exports = LinkedList;
