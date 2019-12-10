@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('LinkedList');
+const LinkedList = require('../day05/linked-list');
 
 class Animal {
   constructor(name, type) {
@@ -58,6 +58,11 @@ class AnimalShelter {
     let ret = current.data;
     if (prev) {
       prev.next = current.next;
+    } else {
+      this.list.head = current.next;
+    }
+    if (!current.next) {
+      this.list.tail = prev;
     }
     this.list.size--;
     return ret;
